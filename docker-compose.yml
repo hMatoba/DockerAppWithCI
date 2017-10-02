@@ -6,3 +6,5 @@ services:
     build:
       context: ./DockerAppWithCI
       dockerfile: Dockerfile
+    ports:
+      - "80:80"
