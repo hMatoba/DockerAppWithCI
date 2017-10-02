@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  dockerappwithci:
+    image: dockerappwithci
+    build:
+      context: ./DockerAppWithCI
+      dockerfile: Dockerfile
