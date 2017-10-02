@@ -6,3 +6,9 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
+  ssldevenv:
+    image: matoba/ssldevenv
+    links:
+      - dockerappwithci:webapp
+    ports:
+      - "443:443"
