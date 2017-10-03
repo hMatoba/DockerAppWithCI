@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  dockerappwithci:
+  webapp:
     image: dockerappwithci
     build:
       context: ./DockerAppWithCI
