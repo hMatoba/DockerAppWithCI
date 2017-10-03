@@ -13,7 +13,7 @@ namespace DockerAppWithCI.Controllers
     {
         public IActionResult Index()
         {
-            var connectionString = "mongodb://mongo";
+            var connectionString = Startup.ConnectionString;
             var client = new MongoDB.Driver.MongoClient(connectionString);
             var db = client.GetDatabase("foo");
             var collection = db.GetCollection<BsonDocument>("bar");
