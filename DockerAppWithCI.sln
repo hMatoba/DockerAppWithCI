@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerAppWithCI", "DockerAppWithCI\DockerAppWithCI.csproj", "{CF90AF18-A877-4730-8E2E-D0FDBA625D81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerAppWithCI", "DockerAppWithCI\DockerAppWithCI.csproj", "{CF90AF18-A877-4730-8E2E-D0FDBA625D81}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6B55458C-1AC8-4084-B81D-1B856177B380}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SeleniumTest", "..\SeleniumTest\SeleniumTest.pyproj", "{526FF0DA-C27B-4BA2-B282-E82358396159}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SeleniumTest", "SeleniumTest\SeleniumTest.pyproj", "{526FF0DA-C27B-4BA2-B282-E82358396159}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
