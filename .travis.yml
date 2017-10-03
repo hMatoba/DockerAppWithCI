@@ -34,7 +34,6 @@ after_success:
  - docker tag matoba/dockerappwithci:ci matoba/dockerappwithci:latest
  - docker login -u="${DOCKER_USERNAME}" -p="${DOCKER_PASSWORD}"
  - docker push matoba/dockerappwithci:latest
- - wget ${PUSH_URL}
 
 matrix:
   fast_finish: true
