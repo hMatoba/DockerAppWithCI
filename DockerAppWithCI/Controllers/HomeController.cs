@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DockerAppWithCI.Models;
+using MongoDB.Bson;
 
 namespace DockerAppWithCI.Controllers
 {
@@ -12,6 +13,11 @@ namespace DockerAppWithCI.Controllers
     {
         public IActionResult Index()
         {
+            var connectionString = "mongodb://mongo";
+            var client = new MongoDB.Driver.MongoClient(connectionString);
+            var db = client.GetDatabase("foo");
+            var collection = db.GetCollection<BsonDocument>("bar");
+
             return View();
         }
 
