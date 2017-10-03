@@ -1,0 +1,30 @@
+language: csharp
+mono: none
+dotnet: 2.0.0
+dist: trusty
+services:
+  - docker
+
+env:
+  - DOCKER_COMPOSE_VERSION=1.16.0
+
+install:
+ - sudo rm /usr/local/bin/docker-compose
+ - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+ - chmod +x docker-compose
+ - sudo mv docker-compose /usr/local/bin
+
+script:
+ - cd DockerAppWithCI
+ - dotnet publish DockerAppWithCI.csproj -c Release -o ./obj/Docker/publish
+ - docker build -t matoba/dockerappwithci:ci .
+ - cd ..
+ - docker-compose -f docker-compose.travis.yml config
+ - docker-compose -f docker-compose.travis.yml build
+ - docker-compose -f docker-compose.travis.yml up -d
+ - sleep 10
+ - cd SeleniumTest
+ - python setup.py test
+
+matrix:
+  fast_finish: true

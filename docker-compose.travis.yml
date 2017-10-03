@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  webapp:
+    image: matoba/dockerappwithci:ci
+  front:
+    image: matoba/ssldevenv
+    ports:
+      - "443:443"
+  selenium:
+    image: selenium/standalone-chrome:3.4
+    ports:
+      - "4444:4444"
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
